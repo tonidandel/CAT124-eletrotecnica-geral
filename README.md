@@ -1,4 +1,5 @@
-#Eletrotécnica Geral
+##General Electrotechnics
+
 Repository of the discipline "General Electrotechnics"
 
 Control Engineering and Automation Department
