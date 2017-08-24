@@ -1,0 +1,252 @@
+
+\documentclass[
+	12pt,
+	a4paper,
+	openany,
+	oneside,
+	english,
+	spanish,
+	brazil,
+	]{abntex2}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
+\usepackage{makeidx}
+\renewcommand{\backrefpagesname}{Citado na(s) pÃ¡gina(s):~}
+% Texto padrÃ£o antes do nÃºmero das pÃ¡ginas
+\renewcommand{\backref}{}
+% Define os textos da citaÃ§Ã£o
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citaÃ§Ã£o no texto.%
+	\or
+		Citado na pÃ¡gina #2.%
+	\else
+		Citado #1 vezes nas pÃ¡ginas #2.%
+	\fi}%
+\title{Trena Eletrônica}
+\autor{Equipe:
+	Gabriela Andrade Ferreira - 15.2.1222
+	\\
+	Letícia Figueiredo dos Santos - 15.2.1115
+	\\
+	Nara Luiza Teixeira Macedo - 15.2.1349}
+\local{Universidade Federal de Ouro Preto}
+\data{2017, 22 de Agosto}
+\instituicao{%
+  Universidade Federal de Ouro Preto
+  \\
+  .Bacharelado em Engenharia Civil
+  \\
+  Disciplina: Eletrotécnica Geral CAT124-76(T+P)}
+\tipotrabalho{Trabalho final da disciplina Eletrotécnica Geral)}
+\preambulo{Trena Eletrônica desenvolvida na disciplina de Eletrotécnica Geral com o objetivo de aplicação no curso de Engenharia Civil.}
+\definecolor{blue}{RGB}{41,5,195}
+\makeatletter
+\hypersetup{
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaÃ§amento entre um parÃ¡grafo e outro:
+\setlength{\parskip}{0.2cm}  % tente tambÃ©m \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+
+
+\begin{document}
+
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaÃ§o extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÃ‰-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% Folha de rosto
+% ---
+\imprimirfolhaderosto
+\printindex
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+% ---
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+\chapter*[Introdução]{Introdução e Escopo}
+\addcontentsline{toc}{chapter}{Introdução}
+
+	Descrição: O projeto Trena Eletrônica para Uso e Aplicação em Atividades Relacionadas à Engenharia Civil contemplará a administração e as atividades técnicas necessárias para o desenvolvimento do protótipo e sua entrega. Estão excluídas desse escopo todas as atividades que ultrapassam os requisitos mínimos de funcionamento listados na seção 1. Requisitos.
+	
+	A possibilidade do uso da Trena Eletrônica para realizar medições traz algumas vantagens em relação a trenas convencionais. Um exemplo é a facilidade de medição, especialmente em locais de difícil acesso ou que necessitam de outros recursos, como escadas. Além disso, as medidas são feitas eletronicamente não dependendo da visão e habilidade do usuário, tornando-se, assim, mais precisas.
+	
+	Trenas eletrônicas possuem um alto valor no mercado e prototipá-la é de grande interesse para os alunos do curso, que muitas vezes não possuem condição financeira para obtê-las. Dessa forma, o desenvolvimento e pesquisa acerca deste protótipo de trena eletrônica é de grande interesse no meio acadêmico e para todas as profissões inseridas na área da arquitetura e construção civil.
+
+% ----------------------------------------------------------
+% Capitulo de textual  
+% ----------------------------------------------------------
+\chapter{Requisitos}
+Objetivos do projeto:
+\\
+\\
+•	Desenvolver um protótipo de uma Trena Eletrônica, um circuito que permite realizar a medida de distâncias utilizando sensor ultrassônico.
+\\
+\par Requisitos funcionais:
+\\
+\\
+•	Facilidade e praticidade na medição. Medidas com algarismos significativos suficientes para o uso ser viável.
+\\
+•	É esperado que a trena obtenha um desempenho suficiente para facilitar o trabalho do engenheiro civil, arquitetos e profissionais da área de construção no levantamento arquitetônico de espaços.
+\\
+\par
+Requisitos não funcionais:
+\\
+\\
+•	O projeto deve ser desenvolvido com uso de componentes comuns e de baixo custo ou com bom custo-benefício.
+\\
+\par
+Requisitos de qualidade:
+\\
+\\
+•	Trena Eletrônica com agilidade, precisão, alcance e funções condizentes com seu custo-benefício. 
+\\
+\par
+Impactos em outras áreas:
+\\
+\\
+•	Facilita o desenvolvimento de trabalhos acadêmicos.
+\\
+•	Pode ser usada tanto para serviços profissionais quanto para pequenos serviços domésticos.
+
+\chapter{Materiais e Métodos}
+
+	Associado à um arduíno, o sensor ultrassônico foi o dispositivo utilizado para medir as distâncias no protótipo. O seu princípio de funcionamento consiste em emitir vibrações (ondas) ultrassônicas que, quando encontram com alguma barreira (uma parede, por exemplo) sofrem reflexão.
+	Foi utilizado o sensor ultrassônico HC-SR04, que é capaz de medir distâncias de 2cm a 4m com 3mm de precisão. Este módulo possui um circuito pronto com emissor e receptor acoplados e 4 pinos (VCC, Trigger, ECHO, GND) para medição. Para começar a medição é necessário alimentar o módulo e colocar o pino Trigger em nível alto. O sensor emitirá uma onda sonora que ao encontrar um obstáculo rebaterá de volta em direção ao módulo, sendo que neste tempo de emissão e recebimento do sinal o pino ECHO ficará também em nível alto. O sistema foi alimentado com uma bateria de 9v que garantiu a sua portabilidade.
+	
+	O sensor faz apenas a medida do tempo. O arduíno associado ao sensor foi programado para receber essa informação do tempo e fazer o cálculo da distância que a onda levou para sair do sensor, atingir o obstáculo e retornar ao dispositivo. O cálculo da distância pode ser feito de acordo com o tempo em que o pino ECHO permaneceu em nível alto após o pino Trigger ter sido colocado em nível alto. Para o cálculo utiliza-se: Distância = [Tempo ECHO em nível alto * Velocidade do Som] / 2. A velocidade do som poder ser considerada idealmente igual a 340 m/s e o resultado é obtido em metros se considerado o tempo em segundos. Na fórmula, a divisão por 2 deve-se ao fato que a onda é enviada e rebatida, ela percorre 2 vezes a distância procurada. Feito o cálculo, o arduíno envia o valor da distância para um visor LCD acoplado ao mesmo.
+	
+Especificações do Sensor Ultrassônico HC-SR04:
+\\- Alimentação: 5V DC
+\\- Corrente de Operação: 2mA
+\\- Alcance.: 2cm a 4m
+\\- Precisão.: 3mm
+
+Específicações do Arduíno Uno R3 Smd Atmega 328:
+\\- Tensão de operação: 5V
+\\- Tensão de alimentação (recomendada): 7-12V
+\\- Entradas e saídas digitais: 14 das quais 6 podem ser PWM
+\\- Entradas analógicas: 6
+\\- Corrente contínua por pino de I/O: 40 mA
+\\- Corrente contínua para o pino 3.3V: 50 mA
+\\- Memória Flash: 32 KB (ATmega328) dos quais 0.5 KB são usados pelo bootloader
+\\- Memória SRAM: 2 KB (ATmega328)
+\\- EEPROM: 1 KB (ATmega328)
+\\- Velocidade do Clock: 16 MHz
+
+Especificações da Shield Display LCD 16x2:
+\\- Usa a biblioteca Arduino LCD 4-Bit
+\\- 6 Botões para controle
+\\- Potenciômento de ajuste de constraste do LCD
+\\- Compatível com Arduino UNO, Diecimila, Duemilanove, MEGA
+
+\chapter{Resultados e Discussões}
+
+Após a montagem do protótipo de Trena Eletrônica e soldagem dos fios, foram iniciados os testes de funcionamento. A equipe encontrou dificuldades para ajustar os códigos no arduíno, uma vez que não possuía vasta experiência no campo nem contato anterior efetivo. Foram necessários vários testes e reajustes mas após algumas tentativas foi possível efetivar o funcionamento da trena eletrônica.
+
+Como resultado do trabalho, o protótipo calcula as distâncias em tempo real e precisa apenas de um curto período de tempo para estabilizar os valores de leitura. A equipe estabeleceu a unidade de medida padrão como Centímetros (cm), uma vez que é a unidade padrão dos trabalhos e projetos de Desenho e Levantamento Arquitetônico de Edificações até porte médio.
+
+Foram testados os resultados de medição realizados pela trena através de comparação com trenas de metal e de fibra e réguas e as medidas foram condizentes. Enquanto a precisão das réguas e trenas varia de 1cm a 5mm, a precisão informada pelo fabricante do sensor é de 3mm.
+
+O fabricante informa que o alcance máximo do sensor ultrassônico é de 4m, porém foi possível medir até aproximadamente 4,10m dependendo dos obstáculos ao redor da área de medição. Após a distância limite, as medidas perdem o sentido e precisão e o módulo LCD informa distâncias superiores a 2km, indicando a perda do sinal refletido.
+
+Não foi realizado o teste de duração da bateria porque a bateria utilizada inicialmente para testar o protótipo já havia sido utilizada anteriormente e, no processo de desenvolvimento, uma parte considerável do tempo de uso da bateria não foi gasto com o efetivo funcionamento do sensor ultrassônico. Dessa forma, a portabilidade do protótipo foi garantida, porém sem informações concretas sobre sua garantia de tempo de uso.
+
+O sensor e o protótipo apresentaram pleno funcionamento. Foram observados pequenos mau-contatos nas soldagens que foram corrigidos para a apresentação final.
+
+\chapter{Conclusão}
+
+O protótipo atendeu aos requisitos e objetivos especificados no projeto. O protótipo de Trena Eletrônica desenvolvido apresentou grande facilidade, praticidade, precisão e rapidez na medição de distâncias.
+
+Por fazer uso do Arduíno, uma plataforma de prototipagem de código aberto baseado em hardware e software de fácil utilização, a Trena Eletrônica desenvolvida representa uma alternativa bastante interessante para os Engenheiros Civis e Arquitetos.
+
+Chegou-se a conclusão de que este protótipo é uma alternativa econômica, prática e com precisão excelente para os objetivos de uso. É uma alternativa versátil em relação às trenas eletrônicas atualmente comercializadas, uma vez que também pode embarcar outras tecnologias e funcionalidades de acordo com o desejo do usuário. Nas trenas convencionais o hardware não possui nenhuma outra funcionalidade além da própria medição. Uma trena eletrônica convencional de qualidade possui um custo em torno de 180,00 a 280,00 reais, enquanto o protótipo teve um custo de cerca de 67 reais (Arduíno+Shield LCD+Sensor Ultrassônico).
+
+O alcance da trena depende do hardware (sensor) utilizado. Neste protótipo é de aproximadamente 4 metros e foram alcançados até 4,1 metros dependendo das barreiras ao redor do sensor. Para um alcance maior, pode-se facilmente substituir o sensor por outros modelos de sensores que atendam melhor a cada objetivo final de uso.
+
+Optou-se pela não fabricação de placas impressas a nível de protótipo em vista do período curto para desenvolvimento do projeto. O uso de PCI's neste protótipo aumentaria ainda mais seu potencial de uso, pois diminuiriam o volume de equipamento e reduziriam o custo. É uma alternativa a ser estudada caso exista futuramente a oportunidade de fabricar e distribuir essas trenas em maior volume.
+
+O objetivo principal deste trabalho de facilitar o acesso e o desenvolvimento de um equipamento que facilite a vida de seu usuário foi atendido. Dessa forma, concluiu-se que o trabalho desenvolvido na disciplina de Eletrotécnica Geral (CAT124) na Universidade Federal de Ouro Preto foi de grande benefício tecnológico e promoveu uma oportunidade singular e inédita de aprendizado e absorção de novas habilidades à equipe envolvida no desenvolvimento deste projeto.
+
+\chapter{Referências}
+
+SENSOR ULTRASSÔNICO. Como funciona o sensor. 2017. Disponível em:
+\url{http://www.newtoncbraga.com.br/index.php/como-funciona/5273-art691}.
+Acesso em: 21 jul. 2017.
+
+SENSOR ULTRASSÔNICO. Especificações do sensor. 2017. Disponível em:
+\url{https://www.eletrogate.com/modulo-sensor-de-distancia-ultrassonico-hc-sr04}
+Acesso em: 21 jul. 2017.
+
+TUTORIAL LATEX. Guia online. Vidageek.net. 2017. Disponível em:
+\url{http://www.vidageek.net/tutorial/guia-latex.html}.
+Acesso em: 21 jul. 2017.
+
+GUIA DO ARDUÍNO. Multilógica-shop. 2017. Disponível em:
+\url{https://multilogica-shop.com/download_guia_arduino}.
+Acesso em: 12 ago. 2017.
+
+APOSTILA ARDUÍNO. Aplicações do Arduíno. FBS Eletrônica. 2017. Disponível em:
+\url{http://www.valdick.com/files/ApostilaArduinoIntroducao.pdf}.
+Acesso em: 12 ago. 2017.
+
+TUTORIAL SENSOR ULTRASSÔNICO. Cytron Technologies. 2017. Disponível em: \url{http://tutorial.cytron.com.my/2012/10/11/testing-ultrasonic-ranging-module-sn-hc-sr04/}.
+Acesso em: 12 ago. 2017.
+% ----------------------------------------------------------
+% Capitulo com exemplos de comandos inseridos de arquivo externo 
+% ----------------------------------------------------------
+
+\include{abntex2-modelo-include-comandos}
+
+% ---
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaÃ§o de parte no SumÃ¡rio
+% ---
+
+\phantompart
+
+\end{document}

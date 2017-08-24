@@ -1,0 +1,124 @@
+\documentclass[a4paper,12pt]{article}% Seu arquivo fonte precisa conter
+\usepackage[brazil]{babel}           % estas quatro linhas
+\usepackage[utf8]{inputenc}          % alem do comando \end{document}
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\title{PROJETO
+	FORNO DE INDUÇÃO
+}
+\author{Gabriel Pena Saturnino Diniz \and Carlos Henrique Firmino\and Fabiane Leocádia da Silva \and Lucas Matheus Magalhães Silva}
+
+\begin{document}
+\maketitle
+\section{Introdução} 
+
+O Forno de Indução pode ser utilizado em indústrias metalúrgicas, possibilitando a fusão de metais, produção de ligas metálicas, etc. Descoberto por Michael Faraday, a indução começa com uma bobina de material condutor (por exemplo, cobre). Sempre que um campo magnético que atravessa uma espira variar, aparece nesse circuito uma corrente elétrica, Figura 1. Esse fenômeno é chamado de indução eletromagnética.\cite{halliday}\cite{mecanica}
+\begin{figure}
+	\centering	
+	\includegraphics[scale=0.6]{campo-magnetico.pdf}
+	\caption{Figura 1. O campo magnético representado com linhas passando através e em torno da bobina}\cite{4}
+	\label{fig:01}
+\end{figure}
+Equipamentos de aquecimento por indução requerem uma compreensão da física, electromagnetismo, eletrônica de potência e controle de processos, mas os conceitos básicos por trás de aquecimento por indução são simples de entender.
+Produtos aquecidos por indução não dependem de convecção ou radiação para aquecer uma peça. Em vez disso, o aquecimento é gerado na superfície da peça pelo fluxo da corrente e então transferido para o núcleo através da condução térmica.
+A profundidade de aquecimento depende muito da frequência da corrente alternada que flui através da peça obra. Uma maior frequência da corrente resultará em menor profundidade de aquecimento e a menor frequência irá resultar em uma maior profundidade de aquecimento. Essa profundidade também dependerá das propriedades elétricas e magnéticas da peça obra.
+O Forno de Indução é um transformador, com 250 espiras na bobina primária e apenas uma espira na bobina secundária. Esta espira na bobina secundária é na verdade um anel metálico de alumínio com espaço onde é possível armazenar água. A redução de 1/250 na tensão de entrada, de 220 volts para pouco mais de 0,8 volts faz com que, em compensação, a corrente no anel seja muito alta, permitindo que uma grande potência elétrica seja dissipada no anel. Essa potência é dissipada em forma de calor (efeito Joule), esquentando o anel e fazendo a água armazenada nele ferver em poucos segundos [4,5].
+Dentre as principais vantagens podemos citar a limpeza, mais rápido e mais preciso que o forno tradicional, a menor contaminação do material a ser fundido/tratado, o custo do consumo de energia, pode ser usado para criar ligas específicas e derreter metais mais resistentes, etc; 
+As desvantagens são, principalmente o custo do equipamento, e também a periculosidade do equipamento, já que este deve ser operado por pessoa melhor qualificada, sendo que neste equipamento é necessário conhecimento do que deve ser feito em caso de falta de energia por exemplo, o operador deve saber que está trabalhando com equipamento que manuseia altas tensões e correntes, etc \cite{halliday}\cite{mecanica}\cite{mosca}
+A figura 2 mostra como é o forno de indução para fundição de metais
+\begin{figure}
+	\centering	
+	\includegraphics[scale=0.6]{processo-de-obteno-de-ao-e-ferro-fundido-20-638.pdf}
+	\caption{Forno de indução.}
+	\label{fig:02}
+\end{figure}
+\section{Objetivos}
+Projetar um protótipo forno de indução para fusão de metais, levando em consideração a base de estudo da disciplina de Eletrotécnica
+
+\section{REFERENCIAL TEÓRICO}
+
+O aquecimento por indução é um processo de aquecimento de um objeto eletricamente condutor, em geral, um metal. O aquecimento desse metal é feito por indução eletromagnética, onde as correntes de Foucault são geradas no interior do metal, onde a resistência  provoca o  aquecimento do metal.
+O que são Correntes de Foucault?
+Correntes de Foucault são correntes elétricas induzidas dentro de condutores por uma mudança do campo magnético no condutor. Quanto mais forte for o campo magnético aplicado, maior será a condutividade elétrica do condutor e quanto mais alterações de campo e mais rápidas, maiores são as correntes que são desenvolvidas e maiores os campos produzidos.\cite{mosca,mecanica}
+
+O aquecimento por indução?
+
+Um aquecedor por indução é constituído por um eletroímã (BOBINA), através do qual passa uma corrente alternada de alta frequência. O calor pode também ser gerado por magnéticos de histerese. A frequência de AC usada depende do tamanho do objeto, o tipo de material, o acoplamento e a profundidade de penetração. A indução da corrente faz com que os elétrons se movimentem com extrema velocidade, produzindo no objeto uma grande quantidade de calor, chegando a 1200 graus célsius.\cite{mecanica}
+O circuito por Indução Eletromagnética
+O princípio de aquecimento por indução é simples. Uma Bobina gera um campo magnético de alta frequência e o objeto de metal no meio da bobina induz as correntes de Foucault que o faz aquecer. Em paralelo com a bobina está ligado capacitores de ressonância para compensar o circuito indutivo.\cite{halliday}
+
+\section{Materiais}
+
+Para fabricação precisaremos de: 
+1 Placa de fenolite simples de 9 x 20, 1 Caneta para desenhar as trilhas na placa, 1 Recipiente com Percloreto de Ferro Anidro  para corrosão da placa, 1 Soldador de 60W - Para soldar os fios e os componentes de potência, 1 Soldador de 25W - Para soldar os componentes de Estanho, 1 Caixa para montagem.Para montagem:Do circuito retificador de baixa tensão:4 Diodos,1 Capacitor eletrolítico de 6800uF x 25V, 1 Capacitor cerâmico de 100nF x 25V.Do circuito gerador de frequência: 1  TL 494, 1  Soquete para o TL 494, 2  Capacitores cerâmicos de 100nF x 50V,  1  Capacitor cerâmico de 100nF x 50V, 1  Resistor de 5k6 x 1/8W,1  Potenciômetro de 4k7, 1  Trimpot de 10K.
+
+\section{Metodologia}
+Na montagem do forno de indução, foi necessário conhecimentos como:
+ Eletrônica básica (associação de componentes, montagem de placas, etc;)
+Eletrônica de potência (retificação de alta tensão, inversão de frequência, etc;)
+Física (efeito joule / ponto de curie, etc;).
+Iniciou-se fixando o núcleo de ferro no suporte de madeira e colocou-se a bobina em um dos lados do ferro. Conectou-se então os fios na bobina e ao ligarmos o interruptor a corrente elétrica que passa pela bobina cria um campo magnético. O campo magnético criado transforma o conjunto em um eletroímã que atrai fortemente o outro núcleo. O circuito primário é composto de uma bobina de 300 espiras onde circula corrente que vem da rede elétrica. 
+O esquema do circuito do protótipo do forno de indução que pretende-se seguir para execução do projeto segue na Figura 3.
+
+\newpage
+\begin{figure}
+	\centering	
+	\includegraphics[scale=0.6]{prototipo-forno-de-inducao.pdf}
+	\caption{Circuito do protótipo do forno de indução.}
+	\label{fig:03}\cite{6}
+\end{figure}
+\section{Resultados e Discussão}
+Em relação ao projeto, foi dedicado muito tempo (cerca de 2 meses) ao estudo e tentativas de utilização. Na figura é possível ver o protótipo desenvolvido nesse projeto.
+Observou-se que foi possível fundir metais como o estanho e alumínio que tem ponto de fusão como se pode ver no anexo A. Para fundir metais com ponto de fusão acima do alumínio o protótipo não atendeu.
+Durante o desenvolvimento do trabalho foram observadas algumas dificuldades: Limitações técnicas impediram a visualização direta dos resultados do forno, a princípio seria utilizado dispositivos digitais só que estes apresentaram altos custos. Porém, como mostrado neste trabalho, foi possível desenvolver um protótipo mais simples. 
+O que notou-se é que, o protótipo do forno de indução demora mais tempo para fundir metais como alumínio, já o estanho por possuir ponto de fusão mais baixo ocorre mais rapidamente sua fundição. 
+
+\begin{figure}
+	\centering	
+	\includegraphics[scale=0.6]{montado.pdf}
+	\caption{Protótipo do forno de indução.}
+	\label{fig:03}
+\end{figure}
+\newpage
+\subsection{Bibliografia}
+\bibliographystyle{plain}
+\bibliography{bibliografia}
+
+\section{Anexo A}
+\begin{table}[]
+	\centering
+	\caption{Anexo A}
+	\label{my-label}
+	\begin{tabular}{lll}
+		Elemento & Ponto de fusão (K) & Ponto de fusão (°C) \\
+		&                    &                     \\
+		Iodo     & 386,85             & 113,7               \\
+		Enxofre  & 392,75             & 115,21              \\
+		Índio    & 429,75             & 156,6               \\
+		Lítio    & 453,65             & 180,5               \\
+		Selênio  & 493,65             & 220,5               \\
+		Estanho  & 505,08             & 231,93              \\
+		Polônio  & 527,15             & 254                 \\
+		Bismuto  & 544,45             & 271,3               \\
+		Cádmio   & 594,22             & 321,07              \\
+		Chumbo   & 600,61             & 327,46              \\
+		Zinco    & 692,73             & 419,58              \\
+		Magnésio & 923,15             & 650                 \\
+		Alumínio & 933,15             & 660                 \\
+		Prata    & 1234,93            & 961,78              \\
+		Ouro     & 1337,33            & 1064,18             \\
+		Cobre    & 1357,77            & 1084,62             \\
+		Manganés & 1519,15            & 1246                \\
+		Berílio  & 1560,15            & 1287                \\
+		Níquel   & 1728,15            & 1455                \\
+		Hólmio   & 1743,15            & 1470                \\
+		Cobalto  & 1768,15            & 1495                \\
+		Ítrio    & 1795,15            & 1522                \\
+		Ferro    & 1811,15            & 1538                \\
+		&                    &                    
+	\end{tabular}
+\end{table}
+\end{document}
+

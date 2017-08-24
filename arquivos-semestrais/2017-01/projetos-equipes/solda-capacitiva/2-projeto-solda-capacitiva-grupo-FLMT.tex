@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt]{article}% Seu arquivo fonte precisa conter
+\usepackage[brazil]{babel}           % estas quatro linhas
+\usepackage[utf8]{inputenc}          % alem do comando \end{document}
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{amsfonts}
+\graphicspath{{figuras/}}
+
+\begin {document}
+% capa
+\begin{titlepage} %iniciando a "capa"
+	\begin{center} %centralizar o texto abaixo
+		{\large Universidade Federal de Ouro Preto}\\[0.2cm] %0,2cm é a distância entre o texto dessa linha e o texto da próxima
+		{\large UFOP}\\[0.2cm] % o comando \\ "manda" o texto ir para próxima linha
+		{\large Departamento de Controle e Automação}\\[0.2cm]
+		{\large Engenharia Metalúrgica}\\[0.2cm]
+		{\large Eletrotécnica}\\[5.1cm]
+		{\bf \huge Máquina de Solda por Descarga Capacitiva}\\[5.1cm] % o comando \bf deixa o texto entre chaves em negrito. O comando \huge deixa o texto enorme
+	\end{center} %término do comando centralizar
+	{\large Fabiano Strutz\\Leandro Moreira\\Matheus Teles\\Túlio César}\\[0.7cm] % o comando \large deixa o texto grande
+	{\large Professor: Dany Tonidandel} 
+	\begin{center}
+		{\large Ouro Preto, 2017}\\[0.2cm]
+	\end{center}
+\end{titlepage} %término da "capa"
+	
+	\section{Introdução}
+	Soldagem é a operação que visa obter a união de duas ou mais peças, assegurando na junta a continuidade das propriedades físicas
+	e químicas necessárias ao seu desempenho.
+Estima-se que hoje em dia estão sendo utilizados mais de 70 processos de soldagem mundialmente. 
+	A técnica da moderna soldagem começou a ser moldada a partir da descoberta do arco elétrico, bem como também a sintetização do gás Acetileno no século passado, o que permitiu que se iniciassem alguns processos de fabricação de peças, utilizando estes novos recursos.
+\pagebreak
+	\section{Objetivos}
+	Tem-se como objetivo a construção de um equipamento composto por um conjunto de capacitores, os quais descarregam a energia em alta velocidade de 1 a 3 ms, através do “pino ignitor”. Ideal para serviços profissionais e industriais em painéis, chapas laminadas, industria branca e muito mais.
+\pagebreak	
+	\section{Metodologia}
+	A metodologia utilizada para a realização do projeto pode ser dividida em duas fases principais:\\
+	\begin{enumerate}
+		\setcounter{enumi}{0}
+	 \item Construção do dispositivo de soldagem capacitiva.\\
+	 Na construção do dispositivo de soldagem utilizamos três componentes:\\
+	\textbf{Capacitores:}\\
+	 Foi calculada a quantidade de capacitores necessária com o auxílio de vídeos informativos e a ajuda de profissionais e então foi obtida a quantia de 12 capacitores de capacitância de 1000 $\mu$F e tensão 25 V. Após a pesquisa de preço dos itens, decidimos por ir ao NTI (Núcleo de Tecnologia e Informação) na UFOP (Universidade Federal de Ouro Preto) visando capacitores já não utilizados e podendo assim ser reaproveitados no trabalho. Foi então obtido um capacitor de 250 V e 4700 $\mu$F.\\
+	 \textbf{Fonte:}\\
+	 Para a transformação da tensão de corrente alternada em corrente contínua e assim carregar os capacitores, primeiramente seria utilizada uma fonte ATX, porém, como não foi possível a obtenção dos 12 capacitores previamente calculados, com o auxilio do NTI, determinou a troca por uma fonte de 180 V que foi utilizada no carregamento dos capacitores.\\
+	 \textbf{Máquina:}\\
+	 A montagem da máquina foi realizada através da abertura da fonte e sendo soldada com dois fios, um no polo positivo dos capacitores em série do circuito da fonte com um fio vermelho no qual alimenta o polo positivo do capacitor utilizado e no polo negativo com um fio preto, que também alimenta o polo negativo do capacitor. Saindo do capacitor, foi soldado outros dois fios onde o polo negativo é colocado na chapa, através de uma garra de jacaré, onde se quer soldar enquanto o polo positivo prende o material a ser soldado, também com o auxílio de outra garra de jacaré.
+	 Não seriam utilizados os fios que saem direto do capacitor da fonte para que não seja roubada a tensão da tomada sendo assim uma descarga direta da fonte e não uma descarga por solda capacitiva.
+	 
+	 \pagebreak
+	 
+	 
+	 \item Testes de funcionamento do dispositivo de soldagem capacitiva.\\
+	 \textbf{Funcionamento:}\\
+	 No funcionamento o equipamento é ligado à tomada de tensão 127 V para efetuar o carregamento do dispositivo, onde a fonte realiza a conversão de corrente alternada em continua, e logo após é retirada para que também não roube a tensão da tomada, sendo assim carregada, a garra ligada ao polo negativo do capacitor é conectada a chapa de metal na qual se quer realizar a solda enquanto a garra do polo positivo é conectada ao metal que se quer soldar. Ao encostar 
+	\subsection{Materiais Utilizados}
+	\begin{enumerate}
+		\setcounter{enumi}{0}
+		\item Banco de capacitores de 1000 $\mu$V (1 unidades)
+		\item Fonte 180V
+		\item Fios e flecha para interruptor
+		\item Fonte: Tomada 127V
+		\item Grampo metálico
+		\setcounter{enumi}{0}
+		\pagebreak
+		
+		\section{Conclusão}
+		É possível notar que a utilização de mais capacitores fornece uma melhor solda e com objetos maiores, contudo, após o levantamento financeiro dos componentes que seriam utilizados optamos pela redução dos capacitores a fim de demonstrar o funcionamento do equipamento e sendo assim possível soldar apenas metais pequenos como grampos e clipes.
+		A qualidade da solda é observada e avaliada como positiva já que a mesma atende o programado de forma a ser resistente e sem resquícios maiores de desgaste do material. Os resquícios encontrados podem ser explicados devido ao capacitor ser de alta tensão dissipando assim muita energia o que pode ser reavido com a formação original do projeto. 
+		\pagebreak
+		
+		\section{Referências Bibliográficas}
+		ARC WELD. Stud Welding. Processo por descarga capacitiva, 2013. Disponivel em:
+		<http://www.arcweld.com.br/cd.htm>. Acesso em: 3 Abr. 2013.\\
+		BURIAN JR, Y.; LYRA, A. C. C. Circuitos elétricos. Sao Paulo: Pearson Prentice Hall, 2006.\\
+		DATTOMA, V.; PALANO, F.; PANELLA, F. W. Mechanical and technological analysis of AISI 304 butt\\
+		joints welded with capacitor dischage process. Materials and Design, Lecce, n. 31, p. 176-184, 2010.\\
+		ENTRON. Resistance welding, 1998. Disponivel em:\\
+	
+		FUSION SOLUTIONS. Capacitor discharge welding technical data, 2001. Disponivel em:
+		
+		
+		IMTEC. Stud Welding, 2014. Disponivel em: <http://www.studweldingbrasil.com.br/como-funcionastud-welding/>.
+		Acesso em: 15 Set. 2014.\\
+		
+		\end{enumerate}
+	\end{enumerate}
+
+
+
+\end{document}

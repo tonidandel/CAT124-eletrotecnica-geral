@@ -1,0 +1,356 @@
+﻿%% abtex2-modelo-projeto-pesquisa.tex, v-1.9.6 laurocesar
+%% Copyright 2012-2016 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-projeto-pesquisa.tex
+%% and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Projeto de pesquisa em conformidade com 
+% ABNT NBR 15287:2011 Informação e documentação - Projeto de pesquisa -
+% Apresentação 
+% ------------------------------------------------------------------------ 
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openany,			% capítulos começam em pág qlqr (insere página vazia caso preciso)
+			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+% ---
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Demonstração do Funcionamento de um Trem MAGLEV }
+\autor{Equipe\\ Gabriel Marques Magalhães Mourão\\ Gustavo Sales de Paula\\ Ingrid Fernandes\\ Leonardo Barbosa Lazarini Silva Ribeiro}
+\local{Brasil}
+\data{2017}
+\instituicao{%
+  Universidade Federal de Ouro Preto - UFOP
+  \par
+  Escola de Minas
+  \par
+  Programa de Graduação}
+\tipotrabalho{Trabalho Prático}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Trabalho prático em conformidade
+com as normas ABNT apresentado à Matéria de Eletrotécnica Geral. \LaTeX.}
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ---
+% NOTA DA ABNT NBR 15287:2011, p. 4:
+%  ``Se exigido pela entidade, apresentar os dados curriculares do autor em
+%     folha ou página distinta após a folha de rosto.''
+% ---
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Objetivo
+% ----------------------------------------------------------
+\chapter{Objetivo}
+
+A partir da análise de estudos realizados referentes aos trens MAGLEV, foram selecionadas informações sobre sistemas de trilhos, que funcionam por repulsão magnética (onde são utilizados eletroímãs nos trens para criarem campos magnéticos entre o trem e os trilhos, gerando uma repulsão [1]), sistemas de orientação e como se locomovem. Utilizando essas informações o trabalho visa demonstrar, em menor escala, o funcionamento desses sistemas que compoem esse meio de transporte.
+
+% ----------------------------------------------------------
+% Requisitos 
+% ----------------------------------------------------------
+\chapter{Requisitos}
+Diversos são os veículos que usam o magnetismo para se locomover por meio de eixos e rolamentos, como por exemplo, os MAGLEVs. A levitação desses veículos é realizada basicamente por campos magnéticos, gerando a propulsão e a elevação do MAGLEV [2].
+
+Um trem MAGLEV é composto por três sistemas que utilizam o eletromagnetismo no seu funcionamento. O sistema de suspensão, orientação e de propulsão [3].
+
+Existem três tipos de processos de levitação: Suspensão Eletrodinâmica, Suspensão Eletromagnética e Levitação Magnética Supercondutora.O processo de suspensão utilzado no projeto se compara com o de Suspensão Eletrodinâmica (Figura 1), por consistir em criar um campo de repulsão entre o trilho e o objeto que representa o trem, e em algumas partes com o sisstema de Suspensão Eletromagnética pelo fato do trem não precisar de rodas para alcançar altas velocidades. Para isso, é necessário ter duas fileiras de ímãs, que representam os eletroímãs dos trilhos, acoplados em duas bases, uma base para cada trilho. Utilizando ímãs iguais, é necessário posiciona-los na parte inferior do objeto que representa o trem, de forma que os polos inferiores dos ímãs do trem sejam do mesmo sinal que os polos superiores dos ímãs que compoem os trilhos [2].
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{trens-5.jpg}
+\caption{Processo de Levitação por Repulsão}
+\label{Rotulo}
+\end{figure}
+
+O processo de locomoção de MAGLEVs, geralmente é realizada através de ímãs supercondutores localizados nas laterais do trem que integragem com ímãs que ficam nas laterais das paredes de por onde o trem se locomove. Utilizando bobinas como eletroímãs, nas paredes da tarjetória, utiliza-se uma corrente alternada, o que faz com que os polos dos eletroímãs sejam alterados em sicronia. As forças de repulsão e de atração induzidas entre os ímãs supercondutores do trem e das paredes são usadas para propulsionar o veículo [2]. As bobinas de propulsão localizadas nas laterais do corredor são alimentadas por uma corrente trifásica de uma subestação, criando um deslocamento do campo magnético no corredor. Os ímãs supercondutores são atraídos e empurrados por esses campos magnéticos em movimento, propulsionando o veículo [3].
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{g.jpg}
+\caption{Princípio de Propulsão}
+\label{Rotulo}
+\end{figure}
+
+Porém, para a demonstração, utiliza-se outra forma de sistema para deslocar o trem representado pelo objeto. Utiliza-se um pequeno ventilador acoplado no objeto. Esse ventilador deve estar virado para a parte oposta ao movimento do trem, de forma a prover o movimento do objeto através da energia eólica [4]. 
+
+Quanto ao sistema de orientação, geralmente são controlados juntos com o sistema de propulsão ou de levitação, utilizando eletroímãs (geralmente nas partes laterais do inferior do vagão), que ajudam a manter o equilíbrio trem e dos vagões.
+
+No projeto não utiliza-se eletroímãs nas laterais como forma de orientação, mas sim suportes laterais que tocam as laterais dos trilhos quando o trem tende a sair da sua rota, garantindo estabilidade no movimento.
+% ----------------------------------------------------------
+% Funcionamento
+% ----------------------------------------------------------
+\chapter{Funcionamento}
+A suspensão utilizada no trabalho funciona através do princípio de repulsão magnética. Em uma suspensão eletromagnética, por exemplo, quando o material condutor está próximo de uma bobina, produz um campo magnético variável (eletroímã), que induz correntes no condutor e forças de repulsão. Em um MAGLEV, o campo magnético é gerado por bobinas supercondutoras presentes no veículo, que ao se mover o fluxo induz a corrente nas bobinas dos trilhos, que interage com o campo magnético, criando assim, um campo de reulsão [1].
+
+O mesmo princípio de repulsão é utilizdo no projeto, porém com ímãs com mesmos polos se repelindo.
+
+O sistema de propulsão da demonstração funcinaria através da energia eólica produzida pelo ventilador de 12V acoplado no objeto. Ele seria alimentado diretamente por fios conectados às bases dos trilhos (um fio do ventilador para cada base), e nas bases seriam passados outros dois fios do início até o final da trajetória (um para cada cada base) que são alimentados por uma fonte de energia de 12V. Os fios do ventilador não seriam presos nas bases, de forma que eles se desloquem junto com o ventilador e o carrinho, e enconstem nos fios das respectivas bases,de forma que continuem a passar corrente para o ventilador. 
+
+
+
+% ----------------------------------------------------------
+% Material
+% ----------------------------------------------------------
+\chapter{Material Utilizado}
+A principio são substituidas as bobinas dos trilhos e dos trems por tiras de ímãs de borrachas, de forma a tornar a demonstração mais prática de ser realizada [4].
+
+O corpo carrinho que representa o veículo é feito com material leve (exemplos: acrílico, papelão), com o intuito de diminuir a massa do trem, facilitando sua levitação, de forma que o carrinho atenda a seguinte condição: Peso tem que ser menor ou igual à Força magnética.
+
+O carrinho é composto por três placas desse material: Uma que compoem a base, onde é colocado um pequeno ventilador de 12 V na sua parte superior, e os ímãs (1 fileira em cada lado, para cada trilho) na sua parte inferior; e duas bases que compem os apoios laterais, o que permite que o carrinho não saia da sua rota.
+
+Os trilhos são feitos por duas fileiras de ímãs, que representam as bobinas nos trilhos. As bases são posicionadas de forma a não enconstarem uma na outra, e utilizando fios de cobre nas bases para propagar a energia para os fios respectivos fios dos ventilador. Para alimentar o ventilador de 12 V e 0,15 A utiliza-se uma pilha de 12 V na qual são conectados os fios da base.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{pu6443.jpg}
+\caption{Carrinho que representa o trem MAGLEV}
+\label{Rotulo}
+\end{figure}
+
+
+
+
+% ^.
+% * <gustavo.gsp@uol.com.br> 2017-08-22T18:06:58.187Z:
+%
+% ^.
+% ----------------------------------------------------------
+% Circuito
+% ----------------------------------------------------------
+\chapter{Circuito}
+O projeto apresentaria apensas um circuito, represtendado na Figura 4, que alimentaria o sistema de propulsão. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{circuitos.png}
+\caption{Circuito para o Sistema de Propulsão}
+\label{Rotulo}
+\end{figure}
+
+
+% ----------------------------------------------------------
+% Capitulo com exemplos de comandos inseridos de arquivo externo 
+% ----------------------------------------------------------
+
+\include{abntex2-modelo-include-comandos}
+
+% ---
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ---
+\phantompart
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+
+
+\bibliography{abntex2-modelo-references}
+[1]
+http://www.teses.usp.br/teses/disponiveis/3/3139/tde-25082005-135156/pt-br.php Acesso: 09/07/2017
+
+[2]
+http://emagnet-esds.blogspot.com.br/2009/03/maglev-comboio-de-levitacao-magnetica.html Acesso: 06/07/2017
+
+[3]	http://www.portalsaofrancisco.com.br/fisica/trens-maglev Acesso: 04/07/2017.
+
+[4]	https://www.supermagnete.de/eng/Magnet-applications/Magnetic-levitation-train-with-power-unit	Acesso: 09/07/2017.
+
+
+
+
+
+
+
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+
+\phantompart
+
+\printindex
+
+
+\end{document}
+
